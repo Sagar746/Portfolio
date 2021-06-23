@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<style>
+	body{
+		background-color: gainsboro;
+		color: black;
+		font-family: Arial,Helvetica,sans-serif;
+		margin:0;
+		padding:0;
+		box-sizing: border-box;
+		transition: 3s ease;
+	}
+	main{
+		width: 800px;
+		height: auto;
+		text-align: center;
+		padding-top: 12px;
+
+	}
+	.intros{
+		font-size: 60px;
+		padding-bottom: 30px;
+	}
+	@media screen and (max-width: 780px){
+		.intros{
+			font-size: 40px;
+		}
+	}
+
+	@media screen and (max-width: 480px){
+		.intros{
+			font-size: 25px;
+		}
+	}
+	@media screen and (max-width: 260px){
+		.intros{
+			font-size: 12px;
+		}
+	}
+
+	section{
+		max-width: 100%;
+		min-height: 500px;
+		border: 2px solid grey;
+		border-radius: 4px;
+		
+	}
+	@media screen and(max-width: 480px){
+		section{
+			padding-bottom: 120px;
+		}
+	}
+
+	.contact{
+		background-color: lightgrey;
+		border:1px solid #a7abb5;
+		padding:12px;
+		color: #0d0c0c;
+
+	}
+	ul{
+		list-style: none;
+	}
+	.chocolate,.olive ,.blue{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;	
+	}
+	.chocolate{
+		background: chocolate;
+	}
+	.olive{
+		background-color: olive;
+	}
+	.blue{
+		background-color: #533C47;
+	}
+	.right{
+		display: inline-block;
+		float: right;
+		right:0;
+		line-height: 15px;
+	}
+	.intro{
+		padding-top: 55px;
+		height: auto;
+		display: flex;
+		padding-bottom: 45px;
+		flex:50%;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		letter-spacing: 2px;
+		gap:3em;
+		color: #0d0c0c;
+	}
+	
+	.intro::after{
+		content:'';
+		clear: both;
+		display: table;
+	}
+
+	.my-image{
+		max-width: 200px;
+		height: 200px;
+		border:2px solid #c0c5d1;
+		padding:1px;
+		border-radius: 4px;
+		box-shadow: 1px 1px 1px 1px maroon;
+	}
+
+	.sub-intro{
+		margin-top: 25px;
+		max-width: 250px;
+		height: auto;
+		position: relative;
+		margin-top: 100px;
+		border:1px solid blue;
+		word-wrap: break-word;
+	}
+
+/* SKILLS AND SOCIAL MEDIA */
+
+.left-right{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-top: 45px;
+}
+
+/* PORTFOLIO, THOUGHTS AND PAST PROJECTS */
+.projects{
+	/*overflow: hidden;*/
+}
+.project{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+	
+
+}
+.coln{
+	max-width: 300px;
+	height: auto;
+	margin:15px;
+	border:1px solid grey;
+}
+.my-project{
+	width: 100%;
+}
+@media screen and (max-width: 600px){
+	.project{
+		flex-direction: column;
+	}
+}
+.my-project{
+
+}
+
+/* Contact us */
+
+.contact-us{
+	max-width: 600px;
+	height: auto;
+	margin:auto;
+	padding:22px;
+	background-color: lightgrey;
+	
+	border:1px solid grey;
+	border-radius: 5px;
+	position: relative;
+	/*bottom: 100px;*/
+}
+	
+	
+
+</style>
+
+<main class="container">
+	<h2 class="intros">Hi, I'm Sagar Tiwari</h2>
+	<section>
+		<div class="contact">
+			<ul>
+			<li class="right"><a href="#contact" style="text-decoration: none; color: black; font-style: bold;"><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
+			</ul>
+		</div>
+
+		<div class="intro">
+			<img class="my-image" src="{% static 'sagar.jpg' %}" width="100%;">
+			<div>
+			<button class="chocolate" onclick="myFunction1()"></button>
+			<button class="olive" onclick="myFunction2()"></button>
+			<button class="blue" onclick="myFunction3()"></button>
+			</div>
+
+			<div class="sub-intro">
+				<h3 style="color: #0d0c0c; text-align: bold;">What I Do</h3>
+				<p style="padding-bottom: 24px; font-size: 18px; font-family: Arial;">
+					I am a Self taught developer.I enjoy learning new things
+				</p>
+			</div>	
+			
+		</div>
+
+	</section>
+</main>
+
+
+
+
+<div class="left-right container pb-4">
+<div class="left">
+	<h3>More about me</h3>
+	<div class="about-me my-4">
+		<p>I build new projects just to tackle my brain and love teaching others how they're made.</p>
+	</div><hr>
+	<div class="skills my-4">
+		<h2>TOP EXPERTISE</h2>
+		<p>FullStack developer with primary focus on Django + Javascript: </p>
+		<div class="skill" style="box-shadow: 1px 1px 3px 1px black; padding:34px;">
+			<p>Python</p>
+			<p>Django</p>
+			<p>Javascript</p>
+			<p>HTML/CSS</p>
+		</div>
+	</div>
+</div>
+
+<div class="right my-4">
+	<h2 class="mb-4">Find me on Social Media</h2>
+	<a href="https://www.facebook.com/sagar.tiwari.73700136" style="text-decoration: none; font-size: 18px;"><i class="fa fa-facebook"></i></a><br><br>
+
+	<a href="https://www.instagram.com/saagartiwari722427" style="text-decoration: none; font-size: 18px;"><i class="fa fa-instagram"></i></a>
+<br><br>
+
+
+
+	<p style="color: blue;"><i class="fa fa-phone"></i> 9864573936 </p>
+</div>
+
+</div>
+
+<hr>
+
+<div class="projects my-5 container">
+	<h3 style="text-align: center;">Portfolio, Thoughts and Past Projects</h3>
+	<div class="project">
+
+		{% for project in projects %}
+		<div class="coln">
+			<img class="my-project" src="{{project.thumbnail.url}}">
+			<h3 style="color: grey;">{{project.title}}<h3>
+			<p>{{project.body}}</p>
+		</div>
+		{% endfor %}
+
+	</div>
+</div>
+
+<hr>
+<br>
+
+<div class="contact-us" id="contact">
+	<h3 style="text-align: center;">Get In Touch</h3>
+	<div class="form">
+	<form method="POST">
+		{% csrf_token %}
+
+		{{form.as_p}}
+		<button type="submit" class="btn btn-primary" style="width: 100%;">Contact</button>
+	</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	
+function myFunction1(){
+	document.body.style.backgroundColor='#38f5f5';
+	document.body.style.color='white';
+}
+
+function myFunction2(){
+	document.body.style.backgroundColor='olive';
+	document.body.style.color='white';
+}
+
+
+function myFunction3(){
+	document.body.style.backgroundColor='#533C47';
+	document.body.style.color='white';
+	document.documentElement.style.color='white;'
+}
+
+
+
+
+
+</script>
+
+{% endblock %}
